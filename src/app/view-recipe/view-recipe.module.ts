@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ViewRecipePageRoutingModule } from './view-recipe-routing.module';
 
 import { ViewRecipePage } from './view-recipe.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ViewRecipePageRoutingModule
+    ViewRecipePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [ViewRecipePage]
 })

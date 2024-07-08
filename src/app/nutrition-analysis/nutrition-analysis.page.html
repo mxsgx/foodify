@@ -13,7 +13,16 @@
 
   <p>Enter an ingredient list list for what you are cooking, like <b>"1 cup rice, 10 oz chickpeas"</b>, etc. Enter each ingredient on a new line.</p>
 
-  <ion-textarea label="Input ingredients" labelPlacement="floating" fill="solid" placeholder="1 cup rice, 10 oz chickpeas" [autoGrow]="true" style="margin-bottom: 1rem;"></ion-textarea>
+  <ion-textarea label="Input ingredients" labelPlacement="floating" fill="solid" placeholder="1 cup rice, 10 oz chickpeas" [autoGrow]="true" style="margin-bottom: 1rem;" [(ngModel)]="ingredients"></ion-textarea>
 
-  <ion-button expand="block">Analyze</ion-button>
+  <ion-button expand="block" (click)="analyze()">Analyze</ion-button>
+
+  <h4>Calories: {{ data?.calories }}</h4>
+
+  <h4>Nutrition</h4>
+  <ul *ngIf="data">
+    <li *ngFor="let nutrition of values(data?.totalNutrients)">
+      {{ nutrition.label }} {{ floor(nutrition.quantity) + nutrition.unit }}
+    </li>
+  </ul>
 </ion-content>

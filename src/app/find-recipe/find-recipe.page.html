@@ -11,5 +11,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-input label="Keywords" label-placement="floating" fill="solid" placeholder="Enter keywords"></ion-input>
+  <ion-input label="Keywords" label-placement="floating" fill="solid" placeholder="Enter keywords" [(ngModel)]="keyword"></ion-input>
+  <ion-button expand="block" (click)="search()">Search</ion-button>
+
+  <ion-grid>
+    <ion-row *ngIf="result">
+      <ion-col *ngFor="let recipe of result?.hits" size="6" sizeSm="4" sizeMd="3" sizeLg="2">
+        <ion-img [src]="recipe.recipe.image" [alt]="recipe.recipe.label" style="margin-bottom: 0.5rem;"></ion-img>
+        <ion-grid>
+          <ion-row>
+            <ion-col style="text-align: center;">{{ floor(recipe.recipe.calories / recipe.recipe.yield) }} <ion-text color="success">CAL</ion-text></ion-col>
+            <ion-col style="text-align: center;">{{ recipe.recipe.ingredientLines.length }} <ion-text color="warning">INGR</ion-text></ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-button fill="clear" buttonType="string" [href]="'/tabs/view-recipe/' + getRecipeId(recipe._links.self.href)">{{ recipe.recipe.label }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../nutrition-analysis/nutrition-analysis.module').then(m => m.NutritionAnalysisPageModule)
       },
       {
+        path: 'view-recipe/:id',
+        loadChildren: () => import('../view-recipe/view-recipe.module').then( m => m.ViewRecipePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
@@ -30,7 +34,7 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/home',
     pathMatch: 'full'
-  }
+  },
 ];
 
 @NgModule({

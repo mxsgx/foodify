@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { NutritionAnalysisPageRoutingModule } from './nutrition-analysis-routing.module';
 
 import { NutritionAnalysisPage } from './nutrition-analysis.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NutritionAnalysisPageRoutingModule
+    NutritionAnalysisPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [NutritionAnalysisPage]
 })

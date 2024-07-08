@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FindRecipePageRoutingModule } from './find-recipe-routing.module';
 
 import { FindRecipePage } from './find-recipe.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FindRecipePageRoutingModule
+    FindRecipePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [FindRecipePage]
 })
