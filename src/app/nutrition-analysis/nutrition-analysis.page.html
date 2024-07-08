@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Analyze Nutrition</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Analyze Nutrition</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <p>Enter an ingredient list list for what you are cooking, like <b>"1 cup rice, 10 oz chickpeas"</b>, etc. Enter each ingredient on a new line.</p>
+
+  <ion-textarea label="Input ingredients" labelPlacement="floating" fill="solid" placeholder="1 cup rice, 10 oz chickpeas" [autoGrow]="true" style="margin-bottom: 1rem;"></ion-textarea>
+
+  <ion-button expand="block">Analyze</ion-button>
+</ion-content>

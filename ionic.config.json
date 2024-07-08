@@ -1,0 +1,7 @@
+{
+  "name": "Foodify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
